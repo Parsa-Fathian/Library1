@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Channels;
-
+using System.Linq;
 class menu
 {
     public void Show_menu()
     {
         Console.WriteLine("\n\nLibrary Management System");
+        Console.WriteLine("1. Add Book");
         Console.WriteLine("2. Add Member");
         Console.WriteLine("3. Display Books");
         Console.WriteLine("4. Display Members");
@@ -28,6 +29,8 @@ class Library
     public List<Person> Persons = new List<Person>();
     public List<Barrow> Barrows = new List<Barrow>();
     public List<History> Histories = new List<History>();
+
+   public method Method = new method();
     // public List<time> time = new List<time>();
     int i = 0;
     int v = 0;
@@ -78,8 +81,8 @@ class Library
             });
             Histories.Add(new History
             {
-            Id = id,
-            Bar_time = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+                Id = id,
+                Bar_time = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
             });
             Console.WriteLine("Added successful");
             Console.ReadKey();
@@ -90,6 +93,7 @@ class Library
             Console.ReadKey();
         }
     }
+
 
 
     public void add_member()
@@ -109,9 +113,16 @@ class Library
                 return;
             }
         }
+        Persons.Add(new Person
+        {
+            Id = x3,
+            Name = x1,
+            LastName = x2,
+            Time1 = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+        });
 
-        Person per = new Person(x3, x1, x2);
-        Persons.Add(per);
+        // Person per = new Person(x3, x1, x2);
+        // Persons.Add(per);
         Console.WriteLine("Added successful");
         Console.ReadKey();
     }
@@ -125,9 +136,9 @@ class Library
         }
         else
         {
-            foreach (var book in books)
+            foreach (var bookk in books)
             {
-                book.DisplayInfo();
+               Method.DisplayInfo(bookk);
             }
         }
 
@@ -138,7 +149,7 @@ class Library
     {
         foreach (var ss in Persons)
         {
-            ss.ShowMember();
+            Method.ShowMember(ss);
         }
 
         Console.ReadKey();
@@ -177,16 +188,23 @@ class Library
                 break;
             }
         }
+        
+        Barrows.Add(new Barrow
+        {
+            PID = memberId,
+            BID = bookId,
+            Time2 = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+        });
 
-        Barrow bar = new Barrow(memberId, bookId);
-        Barrows.Add(bar);
+        // // Barrow bar = new Barrow(memberId, bookId);
+        // Barrows.Add(bar);
         if (book == null)
         {
             Console.WriteLine("Book not found.");
         }
         else
         {
-            book.BorrowBook();
+            Method.BorrowBook(book);
             Console.WriteLine("Book borrowed successfully.");
         }
 
@@ -198,7 +216,7 @@ class Library
     {
         foreach (var boook in Barrows)
         {
-            boook.ShowBarows();
+           Method.ShowBarows(boook);
         }
 
         Console.ReadKey();
@@ -259,7 +277,7 @@ class Library
 
         if (removedCount > 0)
         {
-            book.ReturnBook();
+            Method.ReturnBook(book);
             Console.WriteLine("Book returned successfully.");
             foreach (var his in Histories)
             {
@@ -289,8 +307,8 @@ class Library
 
         Console.WriteLine("search result : ");
 
-        foreach (var foundBook in result)
-            foundBook.DisplayInfo();
+        // foreach (var foundBook in result)
+        //     // foundBook.DisplayInfo(foundBook);
 
         Console.ReadKey();
     }
@@ -299,20 +317,22 @@ class Library
     {
         foreach (var his in Histories)
         {
-            his.show_History();
+           Method.show_History(his);
         }
     }
 }
 
 
-class Program
+class Program 
 {
     static void Main(string[] args)
     {
+        
     Library lib = new Library();
         menu Show = new menu();
         while (true)
         {
+            // PeopleDataContext db = new PeopleDataContext();
             Show.Show_menu();
             string input = Console.ReadLine();
             if (int.TryParse(input, out int s))
@@ -370,4 +390,3 @@ class Program
         }
     }
 }
-
