@@ -5,5 +5,5 @@
         public string Title { get; set; }
         public string Author { get; set; }
         public int Quant { get; set; }
-        public string Time { get; set; }
+        public DateTime RegisterDate { get; set; }
     }

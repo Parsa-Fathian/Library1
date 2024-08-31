@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Beethoven\\RiderProjects\\Library\\Library\\Library.csproj": {}
+    "D:\\Other\\LibraryProject\\Library\\Library.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Beethoven\\RiderProjects\\Library\\Library\\Library.csproj": {
+    "D:\\Other\\LibraryProject\\Library\\Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Beethoven\\RiderProjects\\Library\\Library\\Library.csproj",
+        "projectUniqueName": "D:\\Other\\LibraryProject\\Library\\Library.csproj",
         "projectName": "Library",
-        "projectPath": "C:\\Users\\Beethoven\\RiderProjects\\Library\\Library\\Library.csproj",
-        "packagesPath": "C:\\Users\\Beethoven\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Beethoven\\RiderProjects\\Library\\Library\\obj\\",
+        "projectPath": "D:\\Other\\LibraryProject\\Library\\Library.csproj",
+        "packagesPath": "C:\\Users\\sanaa\\.nuget\\packages\\",
+        "outputPath": "D:\\Other\\LibraryProject\\Library\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Beethoven\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sanaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -72,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

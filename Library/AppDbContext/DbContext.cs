@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 
-public class LibraryContext : DbContext
+public class DbContext : Microsoft.EntityFrameworkCore.DbContext
 {
     public DbSet<Book> Books { get; set; }
     public DbSet<Person> Persons { get; set; }
