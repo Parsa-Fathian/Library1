@@ -77,12 +77,12 @@ class Library
                 Title = title,
                 Author = author,
                 Quant = quant,
-                Time = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+               Date = DateTime.Now
             });
             Histories.Add(new History
             {
                 Id = id,
-                Bar_time = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+               BarrowDate =DateTime.Now
             });
             Console.WriteLine("Added successful");
             Console.ReadKey();
@@ -118,7 +118,7 @@ class Library
             Id = x3,
             Name = x1,
             LastName = x2,
-            Time1 = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+            Date = DateTime.Now
         });
 
         // Person per = new Person(x3, x1, x2);
@@ -193,7 +193,7 @@ class Library
         {
             PID = memberId,
             BID = bookId,
-            Time2 = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+            DATE = DateTime.Now
         });
 
         // // Barrow bar = new Barrow(memberId, bookId);
@@ -283,7 +283,7 @@ class Library
             {
                 if (his.Id ==persId )
                 {
-                    his.Ret_time = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                    his.ReturnDate = DateTime.Now;
                 }
             }
         }

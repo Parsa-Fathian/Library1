@@ -8,11 +8,11 @@ public class method
     
     public void DisplayInfo(Book book)
     {
-        Console.WriteLine($"ID: {book.Id}, Title: {book.Title}, Author: {book.Author}, quant: {book.Quant} , Time: {book.Time}");
+        Console.WriteLine($"ID: {book.Id}, Title: {book.Title}, Author: {book.Author}, quant: {book.Quant} , Time: {book.Date}");
     }
     public void ShowMember(Person person)
     {
-        Console.WriteLine($"ID= {person.Id} ,Name= {person.Name}, LastName = {person.LastName}, Time= {person.Time1}");
+        Console.WriteLine($"ID= {person.Id} ,Name= {person.Name}, LastName = {person.LastName}, Time= {person.Date}");
     }
     public void BorrowBook(Book quantBook)
     {
@@ -31,18 +31,18 @@ public class method
     }
     public void show_History(History history)
     {
-        if (history.Ret_time==null)
+        if (history.ReturnDate==null)
         {
-            Console.WriteLine($"personID = {history.Id}, BarrowTime = {history.Bar_time}");
+            Console.WriteLine($"personID = {history.Id}, BarrowTime = {history.BarrowDate}");
         }
         else
         {
-            Console.WriteLine($"personID = {history.Id}, BarrowTime = {history.Bar_time} , ReturnTime = {history.Ret_time}");
+            Console.WriteLine($"personID = {history.Id}, BarrowTime = {history.BarrowDate} , ReturnTime = {history.ReturnDate}");
         }
     }
     public void ShowBarows(Barrow barrow)
     {
-        Console.WriteLine($"PERSON ID= {barrow.PID}  BOOK ID={barrow.BID}  Time= {barrow.Time2} ");
+        Console.WriteLine($"PERSON ID= {barrow.PID}  BOOK ID={barrow.BID}  Time= {barrow.DATE} ");
     }
     
 }
